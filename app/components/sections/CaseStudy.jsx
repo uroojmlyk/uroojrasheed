@@ -2,390 +2,233 @@
 
 // "use client";
 
-// import { ExternalLink, Quote, Star, Users, Target, Zap } from 'lucide-react'
-// import Image from 'next/image'
+// import { ExternalLink, Zap, Database, Shield, Code2, TrendingUp } from 'lucide-react'
 // import Link from 'next/link'
 
+// const caseStudy = {
+//   label: 'Case Study — SaaS / EdTech',
+//   title: 'QuizForge',
+//   subtitle: 'AI-Powered Quiz Platform',
+//   liveLink: 'https://quizplatform-7dh5.vercel.app',
+//   year: '2026',
+//   duration: '3 weeks',
+//   role: 'Full Stack Developer',
+
+//   problem: 'Educators spend hours manually creating quizzes. Existing tools are either too rigid (Google Forms) or too expensive (enterprise platforms). There was a clear gap for an AI-native solution with real-time feedback.',
+
+//   solution: 'Built a full-stack SaaS platform that uses OpenAI GPT to generate topic-based quiz questions on demand. Users authenticate via JWT, create sessions, answer questions, and view detailed performance analytics.',
+
+//   architecture: [
+//     { icon: <Code2 size={16} />, label: 'Frontend', value: 'Next.js 14 App Router + TypeScript' },
+//     { icon: <Database size={16} />, label: 'Database', value: 'MongoDB Atlas (Mongoose ODM)' },
+//     { icon: <Shield size={16} />, label: 'Auth', value: 'JWT-based session management' },
+//     { icon: <Zap size={16} />, label: 'AI Layer', value: 'OpenAI GPT-4o with prompt engineering' },
+//   ],
+
+//   challenges: [
+//     { title: 'Cold-start latency', solution: 'Implemented streaming API responses and optimistic UI updates to make AI generation feel instant.' },
+//     { title: 'Score persistence', solution: 'Designed a denormalized MongoDB schema that stores session state for real-time score updates without complex joins.' },
+//     { title: 'Mobile performance', solution: 'Code splitting, lazy loading, and image optimization pushed Lighthouse from 80 → 95+.' },
+//   ],
+
+//   metrics: [
+//     { value: '95+', label: 'Lighthouse Score' },
+//     { value: '3 wks', label: 'Ship Time' },
+//     { value: '0→', label: 'JWT Auth from scratch' },
+//     { value: 'AI', label: 'OpenAI integrated' },
+//   ],
+// }
+
 // export default function CaseStudy() {
-//   const caseStudies = [
-//     {
-//       id: 1,
-//       title: "Cafe Janoshi — Ecommerce Transformation",
-//       client: "Cafe Janoshi, Okara",
-//       category: "Ecommerce Website",
-//       duration: "2 Weeks",
-//       role: "Full Stack Developer",
-//       challenge: "Cafe Janoshi needed a modern website to showcase their menu and allow customers to easily place orders. They wanted a seamless cart experience, WhatsApp integration for orders, and Google Maps for location discovery.",
-//       solution: "Built a Next.js ecommerce platform with dynamic cart functionality, real-time price updates, and responsive menu cards. Integrated WhatsApp API for direct orders and Google Maps for store location.",
-//       results: [
-//         "✅ Live production website deployed on Vercel",
-//         "✅ Fully responsive menu display with HD images",
-//         "✅ Seamless cart and order flow",
-//         "✅ Easy-to-update product management"
-//       ],
-//       image: "/janoshiss.png",
-//       tags: ["Next.js", "Tailwind", "Cart", "WhatsApp API", "Maps"],
-//       liveLink: "https://cafejanoshi.vercel.app",
-//       accent: "#FF8A5C"
-//     },
-//     {
-//       id: 2,
-//       title: "Daim Marriage Hall — Digital Presence",
-//       client: "Daim Marriage Hall & Marquee",
-//       category: "Business Website",
-//       duration: "1.5 Weeks",
-//       role: "React Developer",
-//       challenge: "Daim Marriage Hall required an elegant website to showcase their venue, services, and gallery. They wanted a modern, trustworthy online presence that reflects their premium service quality.",
-//       solution: "Developed a high-performance React + Vite website with clean UI, services showcase, and gallery layout. Focused on fast load times and smooth user experience across all devices.",
-//       results: [
-//         "✅ Modern, responsive business website",
-//         "✅ Services and gallery showcase",
-//         "✅ Optimized performance with Vite",
-//         "✅ Contact integration for inquiries"
-//       ],
-//       image: "/dad.png",
-//       tags: ["React", "Vite", "Tailwind", "Responsive", "UI/UX"],
-//       liveLink: "https://daim-marriage-hall-and-marquee.vercel.app",
-//       accent: "#FF8A5C"
-//     },
-//     {
-//       id: 3,
-//       title: "Zeno Software House — Corporate Website",
-//       client: "Zeno Software House, Karachi DHA Phase 6",
-//       category: "Corporate Website",
-//       duration: "2 Weeks",
-//       role: "Full Stack Developer",
-//       challenge: "Zeno Software House needed a professional corporate website to establish their online presence in Karachi's competitive tech industry. They required a modern, trustworthy platform to showcase their services, portfolio, and attract potential clients.",
-//       solution: "Built a Next.js corporate website with elegant UI/UX, comprehensive services showcase, portfolio display with filtering, client testimonials section, and integrated contact forms. Focused on performance, SEO optimization, and mobile responsiveness.",
-//       results: [
-//         "✅ Live production website deployed on Vercel",
-//         "✅ Professional services and portfolio showcase",
-//         "✅ Client testimonials for social proof",
-//         "✅ SEO optimized for better visibility",
-//         "✅ Fully responsive across all devices"
-//       ],
-//       image: "/love.png",
-//       tags: ["Next.js", "Tailwind", "SEO", "Corporate", "Responsive"],
-//       liveLink: "https://softwarehouse-bop9.vercel.app",
-//       accent: "#FF8A5C"
-//     }
-//   ]
-
-//   const testimonials = [
-//     {
-//       id: 1,
-//       name: "Cafe Janoshi",
-//       role: "Business Owner",
-//       content: "Urooj developed our complete ecommerce website. The cart system works perfectly and our customers love the easy ordering process. Professional work!",
-//       rating: 5,
-//       project: "Cafe Janoshi"
-//     },
-//     {
-//       id: 2,
-//       name: "Daim Marriage Hall",
-//       role: "Management",
-//       content: "Very satisfied with the website. Clean design, fast loading, and exactly what we needed. Great communication and timely delivery.",
-//       rating: 5,
-//       project: "Daim Marriage Hall"
-//     },
-//     {
-//       id: 3,
-//       name: "Zeno Software House",
-//       role: "Director",
-//       content: "Urooj delivered an exceptional corporate website for our software house. The design perfectly represents our brand and the functionality is top-notch. Highly recommended!",
-//       rating: 5,
-//       project: "Zeno Software House"
-//     }
-//   ]
-
 //   return (
-//     <section id="casestudy" className="relative w-full py-32 bg-[#E5E5E5] overflow-hidden">
-//       {/* CLEAN BG */}
-//       <div className="absolute inset-0 bg-[#E5E5E5]"></div>
-      
-//       {/* SUBTLE BACKGROUND ORBS */}
-//       <div className="absolute inset-0 overflow-hidden">
-//         <div className="absolute top-40 right-40 w-96 h-96 bg-[#FF8A5C]/5 rounded-full blur-3xl"></div>
-//         <div className="absolute bottom-40 left-40 w-96 h-96 bg-[#FF8A5C]/5 rounded-full blur-3xl"></div>
-//       </div>
-      
-//       <div className="relative z-20 max-w-7xl mx-auto px-6">
-        
-//         {/* ---------- SECTION HEADER - MODERN STYLE ---------- */}
-//         <div className="text-center mb-20 animate-fadeIn">
-//           <span className="inline-block text-[#FF8A5C] text-sm font-light tracking-[0.4em] uppercase mb-6 font-['Inter']">
-//             CASE STUDIES
-//           </span>
-          
-//           <div className="flex items-center justify-center gap-3 mb-6">
-//             <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
-//             <span className="text-[#FF8A5C] text-xs font-light tracking-[0.3em]">✦</span>
-//             <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
-//           </div>
-          
-//           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-[#333333] mb-6 font-['Inter'] tracking-[-0.02em]">
-//             Real Problems, Real Solutions
+//     <section id="casestudy" style={{
+//       background: 'var(--bg)',
+//       padding: 'clamp(80px, 10vw, 128px) 0',
+//       position: 'relative',
+//     }}>
+//       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'var(--border)' }} />
+
+//       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+//         {/* Header */}
+//         <div style={{ marginBottom: '56px' }}>
+//           <div className="section-tag" style={{ marginBottom: '16px' }}>Deep Dive</div>
+//           <h2 style={{
+//             fontFamily: 'DM Sans, sans-serif',
+//             fontSize: 'clamp(32px, 5vw, 52px)',
+//             fontWeight: 800,
+//             letterSpacing: '-0.03em',
+//             color: 'var(--text-primary)',
+//             lineHeight: 1.1,
+//           }}>
+//             Case<br /><span className="gradient-text">Study</span>
 //           </h2>
-          
-//           <div className="flex items-center justify-center gap-2 mt-4">
-//             <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
-//             <span className="w-12 h-[1px] bg-[#FF8A5C]/20"></span>
-//             <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
-//           </div>
-          
-//           <p className="text-[#666666] text-lg max-w-2xl mx-auto mt-8 font-['Inter'] font-light leading-relaxed">
-//             How I transformed requirements into successful live websites.
-//           </p>
 //         </div>
 
-//         {/* ---------- CASE STUDIES GRID ---------- */}
-//         <div className="space-y-20">
-//           {caseStudies.map((study, index) => (
-//             <div
-//               key={study.id}
-//               className="group relative bg-white/60 backdrop-blur-sm border border-[#CCCCCC]/30 rounded-3xl p-8 lg:p-12 hover:border-[#FF8A5C]/30 transition-all duration-700 hover:shadow-2xl hover:shadow-[#FF8A5C]/5 animate-slideUp"
-//               style={{ animationDelay: `${index * 0.2}s` }}
-//             >
-//               {/* DECORATIVE LINE */}
-//               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#FF8A5C] group-hover:w-32 transition-all duration-700 rounded-full"></div>
-              
-//               <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                
-//                 {/* LEFT SIDE - PROJECT INFO */}
-//                 <div className="space-y-6">
-//                   {/* CATEGORY BADGE */}
-//                   <div className="flex items-center gap-3">
-//                     <span className="px-4 py-2 bg-[#FF8A5C]/10 rounded-full text-xs font-light tracking-[0.2em] text-[#FF8A5C] uppercase font-['Inter']">
-//                       {study.category}
-//                     </span>
-//                     <span className="px-4 py-2 bg-white border border-[#CCCCCC]/30 rounded-full text-xs font-light text-[#666666] font-['Inter']">
-//                       ⏱️ {study.duration}
-//                     </span>
-//                   </div>
-
-//                   {/* TITLE */}
-//                   <h3 className="text-3xl lg:text-4xl font-light text-[#333333] leading-tight font-['Inter'] tracking-[-0.02em] group-hover:text-[#FF8A5C] transition-colors duration-500">
-//                     {study.title}
-//                   </h3>
-
-//                   {/* CLIENT & ROLE */}
-//                   <div className="flex flex-wrap items-center gap-4 text-sm">
-//                     <span className="flex items-center gap-1 text-[#666666] font-light font-['Inter']">
-//                       <Users size={16} className="text-[#999999] group-hover:text-[#FF8A5C] transition-colors duration-300" />
-//                       {study.client}
-//                     </span>
-//                     <span className="w-1 h-1 bg-[#CCCCCC] rounded-full"></span>
-//                     <span className="flex items-center gap-1 text-[#666666] font-light font-['Inter']">
-//                       <Target size={16} className="text-[#999999] group-hover:text-[#FF8A5C] transition-colors duration-300" />
-//                       {study.role}
-//                     </span>
-//                   </div>
-
-//                   {/* CHALLENGE */}
-//                   <div className="space-y-2">
-//                     <h4 className="text-xs font-light tracking-[0.25em] text-[#FF8A5C] uppercase font-['Inter']">
-//                       Challenge
-//                     </h4>
-//                     <p className="text-[#666666] text-base font-light leading-relaxed font-['Inter']">
-//                       {study.challenge}
-//                     </p>
-//                   </div>
-
-//                   {/* SOLUTION */}
-//                   <div className="space-y-2">
-//                     <h4 className="text-xs font-light tracking-[0.25em] text-[#FF8A5C] uppercase font-['Inter']">
-//                       Solution
-//                     </h4>
-//                     <p className="text-[#666666] text-base font-light leading-relaxed font-['Inter']">
-//                       {study.solution}
-//                     </p>
-//                   </div>
-
-//                   {/* RESULTS */}
-//                   <div className="space-y-3">
-//                     <h4 className="text-xs font-light tracking-[0.25em] text-[#FF8A5C] uppercase font-['Inter']">
-//                       Results
-//                     </h4>
-//                     <ul className="space-y-2">
-//                       {study.results.map((result, i) => (
-//                         <li key={i} className="flex items-start gap-3 text-sm text-[#666666] font-light font-['Inter'] group/result">
-//                           <span className="text-[#FF8A5C] font-light group-hover/result:translate-x-1 transition-transform duration-300">→</span>
-//                           {result}
-//                         </li>
-//                       ))}
-//                     </ul>
-//                   </div>
-
-//                   {/* TAGS */}
-//                   <div className="flex flex-wrap gap-2 pt-4">
-//                     {study.tags.map((tag, i) => (
-//                       <span
-//                         key={i}
-//                         className="px-3 py-1.5 bg-white border border-[#CCCCCC]/30 rounded-full text-xs font-light text-[#666666] font-['Inter'] hover:border-[#FF8A5C]/30 hover:bg-[#FF8A5C]/5 transition-all duration-300"
-//                       >
-//                         {tag}
-//                       </span>
-//                     ))}
-//                   </div>
-
-//                   {/* LIVE LINK */}
-//                   <div className="pt-4">
-//                     <Link
-//                       href={study.liveLink}
-//                       target="_blank"
-//                       className="group/btn inline-flex items-center gap-3 px-6 py-3 bg-[#FF8A5C] text-white rounded-full font-light tracking-[0.05em] hover:bg-[#FF7A4A] transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,138,92,0.3)] font-['Inter']"
-//                     >
-//                       <span>View Live Project</span>
-//                       <ExternalLink size={16} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
-//                     </Link>
-//                   </div>
-//                 </div>
-
-//                 {/* RIGHT SIDE - PROJECT IMAGE */}
-//                 <div className="relative lg:sticky lg:top-28 group/image">
-//                   <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#CCCCCC]/30 shadow-xl">
-//                     <Image
-//                       src={study.image}
-//                       alt={study.title}
-//                       fill
-//                       className="object-cover object-top transition-transform duration-700 group-hover/image:scale-105"
-//                     />
-//                     <div className="absolute inset-0 bg-gradient-to-t from-[#333333]/70 via-[#333333]/20 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-500"></div>
-//                   </div>
-                  
-//                   {/* DECORATIVE DOTS */}
-//                   <div className="absolute -top-4 -right-4 w-3 h-3 bg-[#FF8A5C] rounded-full animate-pulse-slow"></div>
-//                   <div className="absolute -bottom-4 -left-4 w-2 h-2 bg-[#A0A0A0] rounded-full animate-pulse-slow"></div>
-//                 </div>
+//         {/* Main card */}
+//         <div style={{
+//           background: 'var(--surface)',
+//           border: '1px solid var(--border)',
+//           borderRadius: '20px',
+//           overflow: 'hidden',
+//         }}>
+//           {/* Top bar */}
+//           <div style={{
+//             padding: '24px 32px',
+//             borderBottom: '1px solid var(--border)',
+//             display: 'flex',
+//             alignItems: 'center',
+//             justifyContent: 'space-between',
+//             flexWrap: 'wrap',
+//             gap: '16px',
+//             background: 'var(--surface-2)',
+//           }}>
+//             <div>
+//               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px', flexWrap: 'wrap' }}>
+//                 <span style={{
+//                   padding: '2px 10px',
+//                   background: 'var(--accent-muted)',
+//                   border: '1px solid rgba(255,107,53,0.25)',
+//                   borderRadius: '100px',
+//                   fontSize: '11px',
+//                   fontWeight: 600,
+//                   color: 'var(--accent)',
+//                   textTransform: 'uppercase',
+//                   letterSpacing: '0.05em',
+//                 }}>
+//                   {caseStudy.label}
+//                 </span>
+//                 <span style={{ fontSize: '12px', fontFamily: 'DM Mono, monospace', color: 'var(--text-muted)' }}>
+//                   {caseStudy.year} · {caseStudy.duration} · {caseStudy.role}
+//                 </span>
 //               </div>
+//               <h3 style={{
+//                 fontFamily: 'DM Sans, sans-serif',
+//                 fontSize: 'clamp(24px, 4vw, 36px)',
+//                 fontWeight: 800,
+//                 letterSpacing: '-0.03em',
+//                 color: 'var(--text-primary)',
+//               }}>
+//                 {caseStudy.title} <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>— {caseStudy.subtitle}</span>
+//               </h3>
 //             </div>
-//           ))}
-//         </div>
-
-//         {/* ---------- TESTIMONIALS SECTION ---------- */}
-//         <div className="mt-32">
-//           <div className="text-center mb-16 animate-fadeIn">
-//             <span className="inline-block text-[#FF8A5C] text-sm font-light tracking-[0.4em] uppercase mb-6 font-['Inter']">
-//               TESTIMONIALS
-//             </span>
-            
-//             <div className="flex items-center justify-center gap-3 mb-6">
-//               <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
-//               <span className="text-[#FF8A5C] text-xs font-light tracking-[0.3em]">✦</span>
-//               <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
-//             </div>
-            
-//             <h3 className="text-3xl md:text-4xl font-light text-[#333333] mb-4 font-['Inter'] tracking-[-0.02em]">
-//               What Clients Say
-//             </h3>
-            
-//             <div className="flex items-center justify-center gap-2 mt-4">
-//               <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
-//               <span className="w-12 h-[1px] bg-[#FF8A5C]/20"></span>
-//               <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
-//             </div>
-//           </div>
-
-//           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-//             {testimonials.map((testimonial, index) => (
-//               <div
-//                 key={testimonial.id}
-//                 className="relative bg-white/60 backdrop-blur-sm border border-[#CCCCCC]/30 rounded-2xl p-8 hover:border-[#FF8A5C]/30 transition-all duration-500 group animate-slideUp"
-//                 style={{ animationDelay: `${index * 0.15}s` }}
-//               >
-//                 {/* QUOTE ICON */}
-//                 <Quote size={32} className="absolute top-6 right-6 text-[#FF8A5C]/10 group-hover:text-[#FF8A5C]/20 transition-colors duration-500" />
-                
-//                 {/* RATING */}
-//                 <div className="flex items-center gap-1 mb-4">
-//                   {[...Array(testimonial.rating)].map((_, i) => (
-//                     <Star 
-//                       key={i} 
-//                       size={16} 
-//                       className="fill-[#FF8A5C] text-[#FF8A5C] group-hover:scale-110 transition-transform duration-300" 
-//                       style={{ animationDelay: `${i * 0.1}s` }}
-//                     />
-//                   ))}
-//                 </div>
-
-//                 {/* CONTENT */}
-//                 <p className="text-[#666666] text-base font-light leading-relaxed mb-6 italic font-['Inter']">
-//                   "{testimonial.content}"
-//                 </p>
-
-//                 {/* AUTHOR */}
-//                 <div>
-//                   <h4 className="text-[#333333] font-light text-lg font-['Inter'] tracking-[-0.02em]">
-//                     {testimonial.name}
-//                   </h4>
-//                   <p className="text-sm font-light text-[#999999] font-['Inter']">{testimonial.role}</p>
-//                   <span className="inline-block mt-2 text-xs font-light text-[#FF8A5C] font-['Inter'] tracking-[0.1em]">
-//                     {testimonial.project}
-//                   </span>
-//                 </div>
-
-//                 {/* DECORATIVE DOT */}
-//                 <div className="absolute bottom-6 left-6 w-1.5 h-1.5 bg-[#FF8A5C]/20 rounded-full group-hover:bg-[#FF8A5C]/40 transition-colors duration-300"></div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* ---------- CTA - LET'S WORK TOGETHER ---------- */}
-//         <div className="mt-32 text-center animate-fadeIn">
-//           <div className="relative max-w-3xl mx-auto bg-white/60 backdrop-blur-sm border border-[#CCCCCC]/30 rounded-3xl p-12 hover:border-[#FF8A5C]/30 transition-all duration-700 hover:shadow-2xl hover:shadow-[#FF8A5C]/5 group/cta">
-//             <Zap size={40} className="mx-auto mb-6 text-[#FF8A5C] group-hover/cta:scale-110 transition-transform duration-500" />
-//             <h3 className="text-3xl md:text-4xl font-light text-[#333333] mb-4 font-['Inter'] tracking-[-0.02em]">
-//               Ready to Start Your Project?
-//             </h3>
-//             <p className="text-[#666666] text-lg font-light mb-8 max-w-xl mx-auto font-['Inter']">
-//               Let's create something amazing together. I'm currently available for freelance work.
-//             </p>
-//             <Link
-//               href="#contact"
-//               className="inline-flex items-center gap-3 px-8 py-4 bg-[#FF8A5C] text-white rounded-full font-light tracking-[0.05em] hover:bg-[#FF7A4A] transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,138,92,0.3)] font-['Inter'] group/link"
-//             >
-//               <span>Let's Talk</span>
-//               <span className="group-hover/link:translate-x-1 transition-transform duration-300">→</span>
+//             <Link href={caseStudy.liveLink} target="_blank" rel="noopener noreferrer" className="btn-primary">
+//               View Live <ExternalLink size={15} />
 //             </Link>
 //           </div>
-//         </div>
-        
-//         {/* BOTTOM DECORATIVE LINE */}
-//         <div className="flex items-center justify-center gap-4 mt-20">
-//           <div className="w-16 h-[1px] bg-[#FF8A5C]/20"></div>
-//           <span className="text-[#FF8A5C] text-xs font-light tracking-[0.3em]">◈</span>
-//           <div className="w-16 h-[1px] bg-[#FF8A5C]/20"></div>
+
+//           {/* Body */}
+//           <div style={{ padding: 'clamp(24px, 4vw, 48px)' }}>
+//             <div className="case-grid" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '40px' }}>
+
+//               {/* Problem / Solution */}
+//               <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+//                 {[
+//                   { label: 'The Problem', text: caseStudy.problem, accent: false },
+//                   { label: 'The Solution', text: caseStudy.solution, accent: true },
+//                 ].map((block) => (
+//                   <div key={block.label}>
+//                     <div style={{
+//                       display: 'flex', alignItems: 'center', gap: '8px',
+//                       fontSize: '11px', fontWeight: 700,
+//                       letterSpacing: '0.12em', textTransform: 'uppercase',
+//                       color: block.accent ? 'var(--accent)' : 'var(--text-muted)',
+//                       marginBottom: '10px',
+//                     }}>
+//                       {block.label}
+//                     </div>
+//                     <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
+//                       {block.text}
+//                     </p>
+//                   </div>
+//                 ))}
+
+//                 {/* Metrics */}
+//                 <div style={{
+//                   display: 'grid',
+//                   gridTemplateColumns: 'repeat(2, 1fr)',
+//                   gap: '12px',
+//                 }}>
+//                   {caseStudy.metrics.map((m) => (
+//                     <div key={m.value} style={{
+//                       background: 'var(--bg-3)',
+//                       border: '1px solid var(--border)',
+//                       borderRadius: '10px',
+//                       padding: '16px',
+//                       textAlign: 'center',
+//                     }}>
+//                       <div style={{ fontSize: '22px', fontWeight: 800, color: 'var(--accent)', fontFamily: 'DM Sans, sans-serif', letterSpacing: '-0.02em' }}>{m.value}</div>
+//                       <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>{m.label}</div>
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+
+//               {/* Architecture + Challenges */}
+//               <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+//                 {/* Architecture */}
+//                 <div>
+//                   <div style={{
+//                     fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em',
+//                     textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '14px',
+//                   }}>
+//                     Technical Architecture
+//                   </div>
+//                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+//                     {caseStudy.architecture.map((item) => (
+//                       <div key={item.label} style={{
+//                         display: 'flex', alignItems: 'center', gap: '12px',
+//                         padding: '12px 16px',
+//                         background: 'var(--bg-3)',
+//                         border: '1px solid var(--border)',
+//                         borderRadius: '8px',
+//                       }}>
+//                         <span style={{ color: 'var(--accent)', flexShrink: 0 }}>{item.icon}</span>
+//                         <span style={{ fontSize: '12px', fontFamily: 'DM Mono, monospace', color: 'var(--text-muted)', minWidth: '70px' }}>{item.label}</span>
+//                         <span style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>{item.value}</span>
+//                       </div>
+//                     ))}
+//                   </div>
+//                 </div>
+
+//                 {/* Challenges */}
+//                 <div>
+//                   <div style={{
+//                     fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em',
+//                     textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '14px',
+//                   }}>
+//                     Engineering Challenges
+//                   </div>
+//                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+//                     {caseStudy.challenges.map((c, i) => (
+//                       <div key={i} style={{
+//                         padding: '16px',
+//                         background: 'var(--bg-3)',
+//                         border: '1px solid var(--border)',
+//                         borderRadius: '10px',
+//                       }}>
+//                         <div style={{
+//                           fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)',
+//                           marginBottom: '6px',
+//                         }}>
+//                           {c.title}
+//                         </div>
+//                         <div style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+//                           {c.solution}
+//                         </div>
+//                       </div>
+//                     ))}
+//                   </div>
+//                 </div>
+//               </div>
+
+//             </div>
+//           </div>
 //         </div>
 //       </div>
 
 //       <style jsx>{`
-//         @keyframes fadeIn {
-//           from { opacity: 0; transform: translateY(20px); }
-//           to { opacity: 1; transform: translateY(0); }
-//         }
-        
-//         @keyframes slideUp {
-//           from { opacity: 0; transform: translateY(40px); }
-//           to { opacity: 1; transform: translateY(0); }
-//         }
-        
-//         @keyframes pulse-slow {
-//           0%, 100% { opacity: 1; transform: scale(1); }
-//           50% { opacity: 0.7; transform: scale(1.1); }
-//         }
-        
-//         .animate-fadeIn {
-//           animation: fadeIn 0.8s ease-out forwards;
-//         }
-        
-//         .animate-slideUp {
-//           animation: slideUp 0.8s ease-out forwards;
-//           opacity: 0;
-//         }
-        
-//         .animate-pulse-slow {
-//           animation: pulse-slow 2s ease-in-out infinite;
+//         @media (min-width: 960px) {
+//           .case-grid { grid-template-columns: 1fr 1fr !important; }
 //         }
 //       `}</style>
 //     </section>
@@ -399,277 +242,142 @@
 
 
 
-"use client";
 
-import { ExternalLink, Zap, Shield, Database, Code2, Smartphone, Sparkles } from 'lucide-react'
-import Image from 'next/image'
+"use client";
+import { ExternalLink, Code2, Database, Shield, Zap } from 'lucide-react'
 import Link from 'next/link'
 
 export default function CaseStudy() {
-  const caseStudies = [
-    {
-      id: 1,
-      title: "QuizForge",
-      subtitle: "AI-Powered Quiz Platform",
-      client: "Independent Project",
-      role: "Full Stack Developer",
-      duration: "3 weeks",
-      category: "SaaS / EdTech",
-      problem: "Manual quiz creation for educators and content creators is time-consuming. Existing platforms lacked AI integration for dynamic question generation.",
-      constraints: [
-        "No budget for paid AI APIs during development",
-        "Required responsive design for mobile users",
-        "Needed secure authentication for user data"
-      ],
-      solution: "Built a Next.js platform with OpenAI API integration for prompt-based quiz generation. Implemented JWT authentication for user sessions and MongoDB for data persistence.",
-      engineeringDecisions: [
-        "Chose Next.js API routes over separate backend to reduce complexity",
-        "Used JWT with httpOnly cookies for secure authentication",
-        "Implemented React Hook Form with Zod for quiz creation validation"
-      ],
-      technicalHighlights: [
-        "OpenAI API integration with prompt engineering for varied question types",
-        "Protected routes with middleware-based auth checks",
-        "Real-time quiz scoring and result tracking",
-        "Responsive dashboard for quiz management"
-      ],
-      architecture: {
-        frontend: "Next.js 14 (App Router)",
-        backend: "Next.js API Routes",
-        database: "MongoDB Atlas",
-        auth: "JWT (httpOnly cookies)"
-      },
-      coreTech: ["Next.js", "React", "MongoDB", "Tailwind CSS", "JWT"],
-      otherTech: ["OpenAI API", "React Hook Form", "Zod", "bcryptjs"],
-      liveLink: "https://quizplatform-7dh5.vercel.app",
-      image: "/quizforge.png",
-      imageAlt: "QuizForge dashboard showing quiz creation interface"
-    },
-    {
-      id: 2,
-      title: "Cafe Janoshi",
-      subtitle: "Restaurant Ordering Platform",
-      client: "Cafe Janoshi, Okara",
-      role: "Full Stack Developer",
-      duration: "2 weeks",
-      category: "Ecommerce / Food Tech",
-      problem: "Restaurant needed online ordering but traditional payment gateways weren't practical. 70%+ expected mobile traffic on limited bandwidth.",
-      constraints: [
-        "3G/4G network conditions in Pakistan (2-5 Mbps average)",
-        "Mobile-first requirement based on customer behavior",
-        "No payment gateway — WhatsApp preferred by customers"
-      ],
-      solution: "Built WhatsApp-based ordering flow eliminating checkout friction. Dynamic cart with localStorage sync. API routes for order management.",
-      engineeringDecisions: [
-        "WhatsApp API over payment gateways due to local user behavior",
-        "localStorage cart with server validation on order submission",
-        "WebP images with fallbacks for bandwidth optimization"
-      ],
-      technicalHighlights: [
-        "Cart state management with React Context + localStorage persistence",
-        "WhatsApp API integration with pre-filled order summaries",
-        "Responsive menu grid with touch-optimized interactions",
-        "Image optimization reducing bandwidth ~35% on mobile"
-      ],
-      architecture: {
-        frontend: "Next.js 14 (App Router)",
-        backend: "Next.js API Routes",
-        database: "MongoDB Atlas",
-        auth: "N/A (WhatsApp-based flow)"
-      },
-      coreTech: ["Next.js", "React", "MongoDB", "Tailwind CSS", "LocalStorage"],
-      otherTech: ["WhatsApp API", "Google Maps API", "WebP"],
-      liveLink: "https://cafejanoshi.vercel.app",
-      image: "/janoshiss.png",
-      imageAlt: "Cafe Janoshi menu interface showing cart functionality"
-    }
-  ]
-
   return (
-    <section id="casestudy" className="relative w-full min-h-screen bg-[#E5E5E5] overflow-x-hidden">
-      <div className="absolute inset-0 bg-[#E5E5E5]"></div>
-      
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-40 right-20 w-96 h-96 bg-[#FF8A5C]/5 rounded-full blur-3xl"></div>
-      </div>
-      
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
-        
-        <div className="text-center mb-12 sm:mb-16">
-          <span className="inline-block text-[#FF8A5C] text-xs sm:text-sm font-medium tracking-[0.3em] uppercase mb-4">
-            CASE STUDIES
-          </span>
-          <div className="w-12 h-[1px] bg-[#FF8A5C]/40 mx-auto mb-6"></div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-[#333333] mb-4 tracking-[-0.02em]">
-            Real Projects, Real Decisions
-          </h2>
-          <p className="text-[#666666] text-base max-w-2xl mx-auto font-normal">
-            Production applications built for real requirements
-          </p>
+    <section id="casestudy" style={{ background: 'var(--bg)', position: 'relative' }}>
+      <div style={{ height: 1, background: 'var(--line)' }} />
+      <div className="container section-pad">
+
+        <div style={{ marginBottom: 64 }}>
+          <div className="eyebrow" style={{ marginBottom: 16 }}>Deep Dive</div>
+          <h2 className="display-lg">Case<br /><span className="hl">Study</span></h2>
         </div>
 
-        <div className="space-y-10">
-          {caseStudies.map((study) => (
-            <article key={study.id} className="bg-white rounded-xl border border-[#E0E0E0] overflow-hidden hover:border-[#FF8A5C]/30 transition-all duration-300">
-              <div className="grid lg:grid-cols-2 gap-0">
-                
-                <div className="p-6 sm:p-8">
-                  <header className="mb-6">
-                    <div className="flex flex-wrap items-center gap-2 mb-3">
-                      <span className="px-2.5 py-0.5 bg-[#FF8A5C]/10 rounded text-xs font-mono text-[#FF8A5C]">
-                        {study.category}
-                      </span>
-                      <span className="px-2.5 py-0.5 bg-[#F5F5F5] rounded text-xs font-mono text-[#666666]">
-                        {study.duration}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl sm:text-3xl font-medium text-[#333333] tracking-[-0.02em]">
-                      {study.title}
-                    </h3>
-                    <p className="text-[#FF8A5C] text-sm mt-1">{study.subtitle}</p>
-                    <div className="flex flex-wrap gap-3 text-xs text-[#666666] mt-3">
-                      <span>{study.client}</span>
-                      <span>•</span>
-                      <span>{study.role}</span>
-                    </div>
-                  </header>
+        {/* Big card */}
+        <div style={{ background: 'var(--bg-card)', border: '1px solid var(--line)', borderRadius: 24, overflow: 'hidden' }}>
 
-                  <section className="mb-5">
-                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2">Problem</h4>
-                    <p className="text-sm text-[#666666] leading-relaxed">{study.problem}</p>
-                  </section>
+          {/* Header */}
+          <div style={{
+            background: 'var(--bg-raised)',
+            borderBottom: '1px solid var(--line)',
+            padding: 'clamp(24px,3vw,40px)',
+            display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 20,
+          }}>
+            <div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center', marginBottom: 12 }}>
+                <span className="tag" style={{ fontSize: 10 }}>SaaS · EdTech · AI</span>
+                <span className="tag" style={{ fontSize: 10 }}>2026 · Solo project · 3 weeks</span>
+              </div>
+              <h3 className="display-md">QuizForge <span style={{ color: 'var(--grey)', fontWeight: 400, fontSize: 'clamp(18px,2.5vw,32px)' }}>— AI Quiz Platform</span></h3>
+            </div>
+            <Link href="https://quizplatform-7dh5.vercel.app" target="_blank" rel="noopener noreferrer" className="btn-accent">
+              <ExternalLink size={14} /> View Live
+            </Link>
+          </div>
 
-                  <section className="mb-5 p-3 bg-[#FFF8F5] rounded-lg border-l-2 border-l-[#FF8A5C]">
-                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2 flex items-center gap-1">
-                      <Shield size={12} /> Constraints
-                    </h4>
-                    <ul className="space-y-1">
-                      {study.constraints.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs text-[#666666]">
-                          <span className="w-1 h-1 bg-[#FF8A5C] rounded-full flex-shrink-0 mt-1"></span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
+          {/* Body grid */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 0,
+          }} className="case-grid">
 
-                  <section className="mb-5">
-                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2">Solution</h4>
-                    <p className="text-sm text-[#666666] leading-relaxed">{study.solution}</p>
-                  </section>
+            {/* Left */}
+            <div style={{ padding: 'clamp(24px,3vw,40px)', borderRight: '1px solid var(--line)' }} className="case-left">
+              {/* Problem */}
+              <div style={{ marginBottom: 32 }}>
+                <div className="eyebrow" style={{ marginBottom: 12, color: 'var(--grey)' }}>The Problem</div>
+                <p className="body-md" style={{ lineHeight: 1.75 }}>
+                  Educators waste hours manually writing quizzes. Existing tools are rigid (Google Forms) or prohibitively expensive (enterprise SaaS). There was a gap for an AI-native, affordable solution with real-time feedback.
+                </p>
+              </div>
 
-                  <section className="mb-5">
-                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2 flex items-center gap-1">
-                      <Code2 size={12} /> Engineering Decisions
-                    </h4>
-                    <ul className="space-y-1">
-                      {study.engineeringDecisions.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs text-[#666666]">
-                          <span className="w-1 h-1 bg-[#FF8A5C] rounded-full flex-shrink-0 mt-1"></span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
+              {/* Solution */}
+              <div style={{ marginBottom: 32 }}>
+                <div className="eyebrow" style={{ marginBottom: 12, color: 'var(--accent)' }}>The Solution</div>
+                <p className="body-md" style={{ lineHeight: 1.75 }}>
+                  Full-stack SaaS platform. GPT-4o generates contextual questions on demand. JWT auth, MongoDB for session persistence, real-time scoring, and an analytics dashboard — all built solo in 3 weeks.
+                </p>
+              </div>
 
-                  <section className="mb-5">
-                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2 flex items-center gap-1">
-                      <Sparkles size={12} /> Technical Highlights
-                    </h4>
-                    <ul className="space-y-1">
-                      {study.technicalHighlights.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs text-[#666666]">
-                          <span className="w-1 h-1 bg-[#FF8A5C] rounded-full flex-shrink-0 mt-1"></span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
+              {/* Metrics */}
+              <div style={{
+                display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12,
+              }}>
+                {[
+                  { val: '95+', lab: 'Lighthouse' },
+                  { val: '3 wk', lab: 'Ship time' },
+                  { val: 'GPT-4o', lab: 'AI model' },
+                  { val: '0→∞', lab: 'Auth from scratch' },
+                ].map(m => (
+                  <div key={m.val} style={{
+                    background: 'var(--bg-raised)', border: '1px solid var(--line)', borderRadius: 12, padding: 16, textAlign: 'center',
+                  }}>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 800, color: 'var(--accent)', letterSpacing: '-0.03em' }}>{m.val}</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--grey)', marginTop: 4, letterSpacing: '0.06em' }}>{m.lab}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-                  <section className="mb-5 p-3 bg-[#F8F8F8] rounded-lg">
-                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2 flex items-center gap-1">
-                      <Database size={12} /> Architecture
-                    </h4>
-                    <div className="grid grid-cols-2 gap-2 text-xs">
-                      <div>
-                        <span className="text-[#999999]">Frontend:</span>
-                        <p className="text-[#333333] font-mono text-xs">{study.architecture.frontend}</p>
+            {/* Right */}
+            <div style={{ padding: 'clamp(24px,3vw,40px)' }} className="case-right">
+              {/* Architecture */}
+              <div style={{ marginBottom: 28 }}>
+                <div className="eyebrow" style={{ marginBottom: 16, color: 'var(--grey)' }}>Architecture</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  {[
+                    { icon: Code2,     layer: 'Frontend', val: 'Next.js 14 App Router + TypeScript' },
+                    { icon: Database,  layer: 'Database', val: 'MongoDB Atlas — Mongoose ODM' },
+                    { icon: Shield,    layer: 'Auth',     val: 'JWT — custom middleware' },
+                    { icon: Zap,       layer: 'AI',       val: 'OpenAI GPT-4o + prompt engineering' },
+                  ].map(a => {
+                    const Icon = a.icon
+                    return (
+                      <div key={a.layer} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '11px 14px', background: 'var(--bg-raised)', border: '1px solid var(--line)', borderRadius: 8 }}>
+                        <Icon size={14} style={{ color: 'var(--accent)', flexShrink: 0 }} />
+                        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--grey)', minWidth: 64, letterSpacing: '0.04em' }}>{a.layer}</span>
+                        <span style={{ fontSize: 13, color: 'var(--grey-hi)' }}>{a.val}</span>
                       </div>
-                      <div>
-                        <span className="text-[#999999]">Backend:</span>
-                        <p className="text-[#333333] font-mono text-xs">{study.architecture.backend}</p>
-                      </div>
-                      <div>
-                        <span className="text-[#999999]">Database:</span>
-                        <p className="text-[#333333] font-mono text-xs">{study.architecture.database}</p>
-                      </div>
-                      <div>
-                        <span className="text-[#999999]">Auth:</span>
-                        <p className="text-[#333333] font-mono text-xs">{study.architecture.auth}</p>
-                      </div>
-                    </div>
-                  </section>
-
-                  <section className="mb-6">
-                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2">Tech Stack</h4>
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      <span className="text-xs text-[#999999] font-mono">Core:</span>
-                      {study.coreTech.map((tech, i) => (
-                        <span key={i} className="px-2 py-0.5 bg-white border border-[#FF8A5C]/30 rounded text-xs font-mono text-[#FF8A5C]">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="text-xs text-[#999999] font-mono">Extended:</span>
-                      {study.otherTech.map((tech, i) => (
-                        <span key={i} className="px-2 py-0.5 bg-[#F5F5F5] border border-[#E0E0E0] rounded text-xs font-mono text-[#666666]">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </section>
-
-                  <Link
-                    href={study.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 text-sm text-[#FF8A5C] hover:text-[#FF6B3A] transition-colors font-medium"
-                  >
-                    View Live Project
-                    <ExternalLink size={14} className="group-hover:translate-x-0.5 transition-transform" />
-                  </Link>
-                </div>
-
-                <div className="relative bg-[#F5F5F5] min-h-[400px] lg:min-h-full">
-                  <Image
-                    src={study.image}
-                    alt={study.imageAlt}
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
+                    )
+                  })}
                 </div>
               </div>
-            </article>
-          ))}
-        </div>
 
-        <div className="mt-16 text-center">
-          <div className="max-w-2xl mx-auto p-8 bg-white rounded-xl border border-[#E0E0E0]">
-            <Zap size={32} className="mx-auto mb-4 text-[#FF8A5C]" />
-            <h3 className="text-xl font-medium text-[#333333] mb-2">Have a project in mind?</h3>
-            <p className="text-[#666666] text-sm mb-4">Available for freelance work — let's discuss your requirements</p>
-            <Link
-              href="#contact"
-              className="inline-flex items-center gap-2 px-5 py-2 bg-[#FF8A5C] text-white text-sm font-medium rounded-lg hover:bg-[#FF6B3A] transition-all duration-300"
-            >
-              Start a Conversation
-              <ExternalLink size={14} />
-            </Link>
+              {/* Challenges */}
+              <div>
+                <div className="eyebrow" style={{ marginBottom: 16, color: 'var(--grey)' }}>Engineering Challenges</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {[
+                    { prob: 'AI latency', fix: 'Streaming API responses + optimistic UI so generation feels instant.' },
+                    { prob: 'Score persistence', fix: 'Denormalized MongoDB schema — real-time updates without complex joins.' },
+                    { prob: 'Mobile perf', fix: 'Code splitting + lazy loading pushed Lighthouse from 78 to 95+.' },
+                  ].map(c => (
+                    <div key={c.prob} style={{ padding: 16, background: 'var(--bg-raised)', border: '1px solid var(--line)', borderRadius: 10 }}>
+                      <div style={{ fontFamily: 'var(--font-display)', fontSize: 13, fontWeight: 700, color: 'var(--white)', marginBottom: 5 }}>
+                        <span style={{ color: 'var(--accent)' }}>↳ </span>{c.prob}
+                      </div>
+                      <div style={{ fontSize: 13, color: 'var(--grey)', lineHeight: 1.6 }}>{c.fix}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .case-grid { grid-template-columns: 1fr !important; }
+          .case-left { border-right: none !important; border-bottom: 1px solid var(--line); }
+        }
+      `}</style>
     </section>
   )
 }

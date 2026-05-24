@@ -1,241 +1,349 @@
-"use client";
 
-import { Briefcase, GraduationCap, ExternalLink, Zap, Database, Shield } from 'lucide-react'
+
+
+
+// "use client";
+
+// import { Briefcase, GraduationCap, ExternalLink } from 'lucide-react'
+// import Link from 'next/link'
+
+// const experiences = [
+//   {
+//     type: 'work',
+//     title: 'Frontend Developer (Freelance)',
+//     company: 'Independent',
+//     date: '2024 — Present',
+//     summary: 'Designed and shipped 2 production applications end-to-end — from architecture decisions to deployment on Vercel.',
+//     tech: ['Next.js 14', 'React', 'TypeScript', 'MongoDB', 'Tailwind CSS', 'OpenAI API'],
+//     highlights: [
+//       'Built reusable atomic component system — reduced UI build time ~35%',
+//       'Improved Lighthouse score from ~80 → 95+ via image optimization & code splitting',
+//       'Integrated OpenAI API for dynamic AI-generated quiz content',
+//       'Implemented WhatsApp ordering flow — no traditional checkout required',
+//       'Mobile-first development for 70%+ mobile user base (Pakistan market)',
+//     ],
+//     links: [
+//       { label: 'QuizForge', url: 'https://quizplatform-7dh5.vercel.app' },
+//       { label: 'MILA Miami', url: 'https://mila-miami.com/' },
+//     ],
+//   },
+//   {
+//     type: 'education',
+//     title: 'Self-directed Frontend Engineering',
+//     company: 'Project-based Learning',
+//     date: '2024 — 2025',
+//     summary: 'Mastered modern React patterns, Next.js App Router, and full-stack MERN development by building real production applications.',
+//     tech: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Node.js', 'Git'],
+//     highlights: [
+//       'Deep-dived Next.js App Router, SSR, ISR patterns in production',
+//       'REST API design with error handling, loading states, optimistic updates',
+//       'Built reusable component library used across multiple projects',
+//       'Practiced Git workflow, PR reviews, and deployment pipelines',
+//     ],
+//     links: [],
+//   },
+// ]
+
+// export default function Experiences() {
+//   return (
+//     <section id="experiences" style={{
+//       background: 'var(--bg-2)',
+//       padding: 'clamp(80px, 10vw, 128px) 0',
+//       position: 'relative',
+//     }}>
+//       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'var(--border)' }} />
+
+//       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+//         <div style={{ marginBottom: '64px' }}>
+//           <div className="section-tag" style={{ marginBottom: '16px' }}>Background</div>
+//           <h2 style={{
+//             fontFamily: 'DM Sans, sans-serif',
+//             fontSize: 'clamp(32px, 5vw, 52px)',
+//             fontWeight: 800,
+//             letterSpacing: '-0.03em',
+//             color: 'var(--text-primary)',
+//             lineHeight: 1.1,
+//           }}>
+//             Experience &<br /><span className="gradient-text">Education</span>
+//           </h2>
+//         </div>
+
+//         {/* Timeline */}
+//         <div style={{ position: 'relative' }}>
+//           {/* Vertical line */}
+//           <div style={{
+//             position: 'absolute',
+//             left: '20px',
+//             top: '8px',
+//             bottom: 0,
+//             width: '1px',
+//             background: 'var(--border)',
+//           }} className="timeline-line" />
+
+//           <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+//             {experiences.map((exp, i) => (
+//               <div key={i} style={{ display: 'flex', gap: '32px' }} className="timeline-item">
+//                 {/* Dot */}
+//                 <div style={{
+//                   flexShrink: 0,
+//                   width: '40px',
+//                   height: '40px',
+//                   borderRadius: '50%',
+//                   background: exp.type === 'work' ? 'var(--accent-muted)' : 'var(--surface)',
+//                   border: `1px solid ${exp.type === 'work' ? 'rgba(255,107,53,0.3)' : 'var(--border-2)'}`,
+//                   display: 'flex',
+//                   alignItems: 'center',
+//                   justifyContent: 'center',
+//                   color: exp.type === 'work' ? 'var(--accent)' : 'var(--text-secondary)',
+//                   zIndex: 1,
+//                   position: 'relative',
+//                 }}>
+//                   {exp.type === 'work' ? <Briefcase size={18} /> : <GraduationCap size={18} />}
+//                 </div>
+
+//                 {/* Content */}
+//                 <div style={{
+//                   flex: 1,
+//                   background: 'var(--surface)',
+//                   border: '1px solid var(--border)',
+//                   borderRadius: '14px',
+//                   padding: 'clamp(20px, 3vw, 32px)',
+//                 }}>
+//                   <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '12px' }}>
+//                     <div>
+//                       <h3 style={{
+//                         fontFamily: 'DM Sans, sans-serif',
+//                         fontSize: '19px',
+//                         fontWeight: 700,
+//                         color: 'var(--text-primary)',
+//                         letterSpacing: '-0.01em',
+//                         marginBottom: '4px',
+//                       }}>
+//                         {exp.title}
+//                       </h3>
+//                       <span style={{ fontSize: '13px', color: 'var(--text-muted)', fontFamily: 'DM Mono, monospace' }}>
+//                         {exp.company}
+//                       </span>
+//                     </div>
+//                     <span style={{
+//                       padding: '4px 12px',
+//                       background: 'var(--bg-3)',
+//                       border: '1px solid var(--border)',
+//                       borderRadius: '100px',
+//                       fontSize: '12px',
+//                       fontFamily: 'DM Mono, monospace',
+//                       color: 'var(--text-muted)',
+//                       whiteSpace: 'nowrap',
+//                     }}>
+//                       {exp.date}
+//                     </span>
+//                   </div>
+
+//                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '20px' }}>
+//                     {exp.summary}
+//                   </p>
+
+//                   <ul style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+//                     {exp.highlights.map((h, idx) => (
+//                       <li key={idx} style={{
+//                         display: 'flex', alignItems: 'flex-start', gap: '10px',
+//                         fontSize: '13px',
+//                         color: 'var(--text-secondary)',
+//                         lineHeight: 1.5,
+//                       }}>
+//                         <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--accent)', marginTop: '6px', flexShrink: 0 }} />
+//                         {h}
+//                       </li>
+//                     ))}
+//                   </ul>
+
+//                   {/* Tech stack */}
+//                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: exp.links.length > 0 ? '20px' : 0 }}>
+//                     {exp.tech.map((t) => (
+//                       <span key={t} style={{
+//                         padding: '3px 10px',
+//                         background: 'var(--bg-3)',
+//                         border: '1px solid var(--border)',
+//                         borderRadius: '4px',
+//                         fontSize: '11px',
+//                         fontFamily: 'DM Mono, monospace',
+//                         color: 'var(--text-muted)',
+//                       }}>{t}</span>
+//                     ))}
+//                   </div>
+
+//                   {/* Links */}
+//                   {exp.links.length > 0 && (
+//                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+//                       {exp.links.map((link) => (
+//                         <Link
+//                           key={link.label}
+//                           href={link.url}
+//                           target="_blank"
+//                           rel="noopener noreferrer"
+//                           style={{
+//                             display: 'inline-flex', alignItems: 'center', gap: '6px',
+//                             fontSize: '13px',
+//                             fontWeight: 500,
+//                             color: 'var(--accent)',
+//                             textDecoration: 'none',
+//                           }}
+//                           onMouseEnter={e => e.currentTarget.style.textDecoration = 'underline'}
+//                           onMouseLeave={e => e.currentTarget.style.textDecoration = 'none'}
+//                         >
+//                           {link.label} <ExternalLink size={12} />
+//                         </Link>
+//                       ))}
+//                     </div>
+//                   )}
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+
+//       <style jsx>{`
+//         @media (max-width: 600px) {
+//           .timeline-line { display: none; }
+//           .timeline-item { gap: 16px !important; }
+//         }
+//       `}</style>
+//     </section>
+//   )
+// }
+
+
+
+
+
+
+
+
+
+"use client";
+import { Briefcase, BookOpen, ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 
-export default function Experiences() {
-  const experiences = [
-    {
-      id: 1,
-      type: "work",
-      title: "Full Stack Developer (Freelance)",
-      company: "Self-employed",
-      date: "2024 — Present",
-      summary: "Built and deployed 2 production full-stack applications with authentication, third-party APIs, and AI integration.",
-      architecture: {
-        frontend: "Next.js 14 (App Router)",
-        backend: "API Routes + Serverless",
-        database: "MongoDB Atlas",
-        auth: "JWT-based session management"
-      },
-      engineeringHighlights: [
-        "Reduced UI build time ~35% via reusable atomic component system (Button/Input/Form primitives)",
-        "Improved Lighthouse performance from ~80 → 95+ through image optimization + code splitting",
-        "Integrated OpenAI API for dynamic question generation with prompt engineering",
-        "Implemented WhatsApp API for order placement without traditional checkout flow"
-      ],
-      constraints: [
-        "Optimized for low-bandwidth users in Pakistan (3G/4G networks)",
-        "Mobile-first UI design due to 70%+ mobile traffic"
-      ],
-      coreTech: ["Next.js", "React", "MongoDB", "Tailwind CSS"],
-      otherTech: ["Node.js", "TypeScript", "JWT", "OpenAI API", "WhatsApp API"],
-      projectLinks: [
-        { name: "QuizForge →", url: "https://quizplatform-7dh5.vercel.app" },
-        { name: "Cafe Janoshi →", url: "https://cafejanoshi.vercel.app" }
-      ]
-    },
-    {
-      id: 2,
-      type: "education",
-      title: "Frontend Engineering Focus",
-      company: "Project-based Learning",
-      date: "2024 — 2025",
-      summary: "Built production-ready React/Next.js applications with authentication and API integrations alongside freelance work.",
-      engineeringHighlights: [
-        "Mastered Next.js App Router, SSR, ISR patterns through 2 production apps",
-        "Implemented REST API consumption with error handling + loading states",
-        "Built reusable component library used across multiple projects"
-      ],
-      coreTech: ["React", "Next.js", "Tailwind CSS"],
-      otherTech: ["TypeScript", "Git", "REST APIs"],
-      projectLinks: []
-    }
-  ]
+const items = [
+  {
+    type: 'work',
+    title: 'Frontend Developer',
+    org: 'Freelance / Independent',
+    period: '2024 — Present',
+    desc: 'Shipped 2 full-stack production applications solo — from architecture to deployment. Handled client requirements, iterative design, performance tuning, and live delivery.',
+    points: [
+      'Built reusable component system — cut UI build time by ~35%',
+      'Lifted Lighthouse score from ~78 to 95+ across both projects',
+      'Integrated OpenAI GPT-4o for AI-driven quiz generation with real-time streaming',
+      'Designed WhatsApp-native ordering flow, no traditional checkout needed',
+      'Delivered mobile-first UX for Pakistan market (70%+ mobile users)',
+    ],
+    tech: ['Next.js 14', 'React 18', 'TypeScript', 'MongoDB', 'Tailwind', 'Node.js', 'OpenAI API', 'Vercel'],
+    links: [
+      { label: 'QuizForge ↗', url: 'https://quizplatform-7dh5.vercel.app' },
+      { label: 'MILA Miami ↗', url: 'https://mila-miami.com/' },
+    ],
+  },
+  {
+    type: 'learn',
+    title: 'Self-Directed Engineering',
+    org: 'Project-Based Learning',
+    period: '2023 — 2024',
+    desc: 'Levelled up through building, not watching — shipped real projects instead of following tutorials. Focus on React patterns, Next.js internals, and full-stack architecture.',
+    points: [
+      'Mastered Next.js App Router, Server Components, and data fetching strategies',
+      'Built custom REST APIs with proper error handling and auth middleware',
+      'Practised Git workflow: branching, PR discipline, and clean commit history',
+      'Studied UI/UX principles and learned to read Figma files accurately',
+    ],
+    tech: ['React', 'Next.js', 'Tailwind CSS', 'Node.js', 'Git', 'Figma'],
+    links: [],
+  },
+]
 
+export default function Experiences() {
   return (
-    <section id="experiences" className="relative w-full min-h-screen bg-[#E5E5E5] overflow-x-hidden">
-      {/* CLEAN BG */}
-      <div className="absolute inset-0 bg-[#E5E5E5]"></div>
-      
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
-        
-        {/* SECTION HEADER - MINIMAL */}
-        <div className="text-center mb-12 sm:mb-16">
-          <span className="inline-block text-[#FF8A5C] text-xs sm:text-sm font-medium tracking-[0.3em] uppercase mb-4">
-            ENGINEERING EXPERIENCE
-          </span>
-          
-          <div className="w-12 h-[1px] bg-[#FF8A5C]/40 mx-auto mb-6"></div>
-          
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-[#333333] mb-4 tracking-[-0.02em]">
-            Experience
-          </h2>
-          
-          <p className="text-[#666666] text-base max-w-2xl mx-auto font-normal">
-            Production applications with real users and technical constraints
-          </p>
+    <section id="experiences" style={{ background: 'var(--bg-card)', position: 'relative' }}>
+      <div style={{ height: 1, background: 'var(--line)' }} />
+      <div className="container section-pad">
+
+        <div style={{ marginBottom: 64 }}>
+          <div className="eyebrow" style={{ marginBottom: 16 }}>Background</div>
+          <h2 className="display-lg">Experience &<br /><span className="hl">Education</span></h2>
         </div>
 
-        {/* EXPERIENCE CARDS */}
-        <div className="space-y-6 sm:space-y-8">
-          {experiences.map((exp) => (
-            <div
-              key={exp.id}
-              className="group bg-white rounded-xl border-l-4 border-l-[#FF8A5C] border border-[#E0E0E0] hover:border-[#FF8A5C]/40 transition-all duration-300 hover:-translate-y-0.5"
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          {items.map((item, i) => (
+            <div key={i} style={{
+              display: 'grid',
+              background: 'var(--bg)',
+              border: '1px solid var(--line)',
+              borderRadius: 20,
+              overflow: 'hidden',
+              transition: 'border-color 0.3s',
+            }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--line-hi)'}
+            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--line)'}
+            className="exp-card"
             >
-              <div className="p-6 sm:p-7">
-                
-                {/* HEADER */}
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+              {/* Top bar */}
+              <div style={{
+                display: 'flex', flexWrap: 'wrap', alignItems: 'center',
+                justifyContent: 'space-between', gap: 16,
+                padding: 'clamp(20px,3vw,28px) clamp(20px,3vw,36px)',
+                borderBottom: '1px solid var(--line)',
+                background: 'var(--bg-raised)',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                  <div style={{
+                    width: 40, height: 40, borderRadius: 10, flexShrink: 0,
+                    background: item.type === 'work' ? 'var(--accent-dim)' : 'var(--bg-card)',
+                    border: `1px solid ${item.type === 'work' ? 'rgba(232,255,71,0.2)' : 'var(--line-hi)'}`,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: item.type === 'work' ? 'var(--accent)' : 'var(--grey-hi)',
+                  }}>
+                    {item.type === 'work' ? <Briefcase size={18} strokeWidth={1.5} /> : <BookOpen size={18} strokeWidth={1.5} />}
+                  </div>
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      {exp.type === "work" ? (
-                        <Briefcase size={18} className="text-[#FF8A5C]" />
-                      ) : (
-                        <GraduationCap size={18} className="text-[#FF8A5C]" />
-                      )}
-                      <h3 className="text-xl font-medium text-[#333333]">
-                        {exp.title}
-                      </h3>
-                    </div>
-                    <p className="text-[#FF8A5C] font-medium text-sm">
-                      {exp.company}
-                    </p>
-                  </div>
-                  
-                  <div className="flex items-center gap-1.5 text-sm text-[#666666]">
-                    <span className="text-xs">{exp.date}</span>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, color: 'var(--white)', letterSpacing: '-0.015em' }}>{item.title}</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--grey)', letterSpacing: '0.06em', marginTop: 2 }}>{item.org}</div>
                   </div>
                 </div>
+                <span className="tag">{item.period}</span>
+              </div>
 
-                {/* ENGINEERING SUMMARY */}
-                <p className="text-[#666666] text-sm leading-relaxed mb-5 pb-3 border-b border-[#E0E0E0]">
-                  {exp.summary}
-                </p>
+              {/* Body */}
+              <div style={{ padding: 'clamp(20px,3vw,36px)', display: 'grid', gap: 24 }} className="exp-body">
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--grey-hi)', maxWidth: 640 }}>{item.desc}</p>
 
-                {/* ARCHITECTURE SIGNAL - SENIOR LEVEL */}
-                {exp.architecture && (
-                  <div className="mb-5 pb-3 border-b border-[#E0E0E0]">
-                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2 flex items-center gap-1">
-                      <Database size={12} />
-                      Architecture
-                    </h4>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
-                      <div>
-                        <span className="text-[#999999]">Frontend:</span>
-                        <p className="text-[#333333] font-mono text-xs">{exp.architecture.frontend}</p>
-                      </div>
-                      <div>
-                        <span className="text-[#999999]">Backend:</span>
-                        <p className="text-[#333333] font-mono text-xs">{exp.architecture.backend}</p>
-                      </div>
-                      <div>
-                        <span className="text-[#999999]">Database:</span>
-                        <p className="text-[#333333] font-mono text-xs">{exp.architecture.database}</p>
-                      </div>
-                      <div>
-                        <span className="text-[#999999]">Auth:</span>
-                        <p className="text-[#333333] font-mono text-xs">{exp.architecture.auth}</p>
-                      </div>
-                    </div>
+                <ul style={{ display: 'grid', gap: 10, gridTemplateColumns: 'repeat(auto-fill, minmax(280px,1fr))' }}>
+                  {item.points.map(pt => (
+                    <li key={pt} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 13, color: 'var(--grey)', lineHeight: 1.55 }}>
+                      <span style={{ color: 'var(--accent)', marginTop: 3, flexShrink: 0 }}>◆</span>{pt}
+                    </li>
+                  ))}
+                </ul>
+
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                    {item.tech.map(t => <span key={t} className="tag" style={{ fontSize: 10 }}>{t}</span>)}
                   </div>
-                )}
-
-                {/* ENGINEERING HIGHLIGHTS - REPLACES IMPACT */}
-                <div className="mb-5">
-                  <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2 flex items-center gap-1">
-                    <Zap size={12} />
-                    Engineering Highlights
-                  </h4>
-                  <ul className="space-y-1.5">
-                    {exp.engineeringHighlights.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-[#666666]">
-                        <span className="w-1 h-1 bg-[#FF8A5C] rounded-full flex-shrink-0 mt-1.5"></span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* CONSTRAINTS AWARENESS - SENIOR SIGNAL */}
-                {exp.constraints && (
-                  <div className="mb-5 p-3 bg-[#F8F8F8] rounded-lg">
-                    <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2 flex items-center gap-1">
-                      <Shield size={12} />
-                      Real-world Constraints
-                    </h4>
-                    <ul className="space-y-1">
-                      {exp.constraints.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs text-[#666666]">
-                          <span className="w-1 h-1 bg-[#FF8A5C] rounded-full flex-shrink-0 mt-1"></span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* TECH STACK - SIMPLIFIED */}
-                <div className="mb-5">
-                  <h4 className="text-xs font-semibold text-[#333333] uppercase tracking-wider mb-2">
-                    Technologies
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.coreTech.map((tech, i) => (
-                      <span key={i} className="px-2 py-0.5 bg-white border border-[#FF8A5C]/30 rounded text-xs font-mono text-[#FF8A5C]">
-                        {tech}
-                      </span>
-                    ))}
-                    <span className="text-xs text-[#999999] font-mono self-center">+</span>
-                    {exp.otherTech.slice(0, 3).map((tech, i) => (
-                      <span key={i} className="px-2 py-0.5 bg-[#F5F5F5] border border-[#E0E0E0] rounded text-xs font-mono text-[#666666]">
-                        {tech}
-                      </span>
-                    ))}
-                    {exp.otherTech.length > 3 && (
-                      <span className="text-xs text-[#999999] font-mono self-center">
-                        +{exp.otherTech.length - 3} more
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* PROJECT LINKS */}
-                {exp.projectLinks.length > 0 && (
-                  <div className="pt-3 border-t border-[#E0E0E0]">
-                    <div className="flex flex-wrap gap-4">
-                      {exp.projectLinks.map((project, i) => (
-                        <Link
-                          key={i}
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-sm text-[#FF8A5C] hover:underline font-medium"
-                        >
-                          {project.name}
-                          <ExternalLink size={12} />
-                        </Link>
+                  {item.links.length > 0 && (
+                    <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+                      {item.links.map(l => (
+                        <Link key={l.label} href={l.url} target="_blank" rel="noopener noreferrer"
+                          style={{ fontFamily: 'var(--font-display)', fontSize: 13, fontWeight: 600, color: 'var(--accent)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}
+                          onMouseEnter={e => e.currentTarget.style.textDecoration = 'underline'}
+                          onMouseLeave={e => e.currentTarget.style.textDecoration = 'none'}
+                        >{l.label}</Link>
                       ))}
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* AVAILABILITY */}
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white border border-[#E0E0E0] rounded-full">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            <span className="text-[#666666] text-sm">
-              <span className="text-[#FF8A5C] font-medium">Open to opportunities</span> — 2+ years experience
-            </span>
-          </div>
         </div>
       </div>
     </section>

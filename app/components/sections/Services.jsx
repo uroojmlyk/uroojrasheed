@@ -1,355 +1,85 @@
 
 
 
-
-
-
-// "use client";
-
-// import { Code2, Palette, Layout, Smartphone, Globe, Figma } from 'lucide-react'
-
-// export default function Services() {
-//   const services = [
-//     {
-//       icon: <Code2 size={32} />,
-//       title: "Web Development",
-//       description: "Building modern, responsive websites with Next.js, React, and cutting-edge technologies.",
-//       tags: ["Next.js", "React", "Tailwind"]
-//     },
-//     {
-//       icon: <Palette size={32} />,
-//       title: "UI/UX Design",
-//       description: "Creating intuitive, beautiful interfaces that users love to interact with.",
-//       tags: ["Figma", "Adobe XD", "Prototyping"]
-//     },
-//     {
-//       icon: <Layout size={32} />,
-//       title: "Responsive Design",
-//       description: "Pixel-perfect layouts that look stunning on every device — mobile to desktop.",
-//       tags: ["Mobile First", "Fluid", "Adaptive"]
-//     },
-//     {
-//       icon: <Smartphone size={32} />,
-//       title: "Frontend Architecture",
-//       description: "Scalable, maintainable code structures for long-term project success.",
-//       tags: ["Component Based", "Reusable", "Optimized"]
-//     },
-//     {
-//       icon: <Globe size={32} />,
-//       title: "Performance Optimization",
-//       description: "Lightning-fast load times and smooth interactions for better user experience.",
-//       tags: ["SEO", "Core Web Vitals", "Lazy Loading"]
-//     },
-//     {
-//       icon: <Figma size={32} />,
-//       title: "Design to Code",
-//       description: "Converting creative designs into fully functional, interactive websites.",
-//       tags: ["Pixel Perfect", "Figma to React", "Interactive"]
-//     }
-//   ]
-
-//   return (
-//     <section id="services" className="relative w-full py-32 bg-[#E5E5E5] overflow-hidden">
-//       {/* CLEAN BG */}
-//       <div className="absolute inset-0 bg-[#E5E5E5]"></div>
-      
-//       {/* SUBTLE BACKGROUND ELEMENTS */}
-//       <div className="absolute inset-0 overflow-hidden">
-//         <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#FF8A5C]/5 rounded-full blur-3xl"></div>
-//         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#FF8A5C]/5 rounded-full blur-3xl"></div>
-//       </div>
-      
-//       <div className="relative z-20 max-w-7xl mx-auto px-6">
-        
-//         {/* SECTION HEADER - WITH MODERN LINE */}
-//         <div className="text-center mb-20">
-//           <span className="inline-block text-[#FF8A5C] text-sm font-light tracking-[0.4em] uppercase mb-6 font-['Inter']">
-//             WHAT I DO
-//           </span>
-          
-//           {/* MODERN LINE - HERO STYLE */}
-//           <div className="flex items-center justify-center gap-3 mb-6">
-//             <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
-//             <span className="text-[#FF8A5C] text-xs font-light tracking-[0.3em]">✦</span>
-//             <div className="w-12 h-[1px] bg-[#FF8A5C]/30"></div>
-//           </div>
-          
-//           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-[#333333] mb-6 font-['Inter'] tracking-[-0.02em]">
-//             Services & Expertise
-//           </h2>
-          
-//           <div className="flex items-center justify-center gap-2 mt-4">
-//             <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
-//             <span className="w-12 h-[1px] bg-[#FF8A5C]/20"></span>
-//             <span className="w-2 h-2 rounded-full bg-[#FF8A5C]/40"></span>
-//           </div>
-          
-//           <p className="text-[#666666] text-lg max-w-2xl mx-auto mt-8 font-['Inter'] font-light leading-relaxed">
-//             Crafting digital experiences that combine stunning design with flawless functionality.
-//           </p>
-//         </div>
-
-//         {/* SERVICES GRID */}
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//           {services.map((service, index) => (
-//             <div
-//               key={index}
-//               className="group relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-[#CCCCCC]/30 hover:border-[#FF8A5C]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-[#FF8A5C]/5 animate-fadeIn"
-//               style={{ animationDelay: `${index * 0.1}s` }}
-//             >
-//               {/* ICON */}
-//               <div className="relative mb-6">
-//                 <div className="absolute inset-0 bg-[#FF8A5C]/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-//                 <div className="relative w-16 h-16 bg-white rounded-2xl border border-[#CCCCCC]/30 flex items-center justify-center text-[#FF8A5C] group-hover:bg-[#FF8A5C] group-hover:text-white transition-all duration-500">
-//                   {service.icon}
-//                 </div>
-//               </div>
-
-//               {/* CONTENT - MODERN FONT */}
-//               <h3 className="text-2xl font-light text-[#333333] mb-3 group-hover:text-[#FF8A5C] transition-colors duration-300 font-['Inter'] tracking-[-0.02em]">
-//                 {service.title}
-//               </h3>
-              
-//               <p className="text-[#666666] text-base font-light leading-relaxed mb-6 font-['Inter']">
-//                 {service.description}
-//               </p>
-
-//               {/* TAGS - MODERN STYLE */}
-//               <div className="flex flex-wrap gap-2">
-//                 {service.tags.map((tag, tagIndex) => (
-//                   <span
-//                     key={tagIndex}
-//                     className="px-3 py-1.5 bg-[#F5F5F5] text-[#666666] text-xs font-light rounded-full border border-[#CCCCCC]/20 group-hover:border-[#FF8A5C]/20 group-hover:bg-[#FF8A5C]/5 transition-all duration-300 font-['Inter'] tracking-[-0.01em]"
-//                   >
-//                     {tag}
-//                   </span>
-//                 ))}
-//               </div>
-
-//               {/* DECORATIVE LINE */}
-//               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#FF8A5C] group-hover:w-16 transition-all duration-500"></div>
-//             </div>
-//           ))}
-//         </div>
-
-//         {/* STATS - MODERN STYLE */}
-//         <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-//           <div className="text-center group">
-//             <div className="text-3xl md:text-4xl font-light text-[#333333] mb-2 font-['Inter'] tracking-[-0.02em]">2+</div>
-//             <div className="w-8 h-[1px] bg-[#FF8A5C]/30 mx-auto mb-2 group-hover:w-12 transition-all duration-300"></div>
-//             <div className="text-sm text-[#666666] font-light tracking-wide font-['Inter']">Live Projects</div>
-//           </div>
-//           <div className="text-center group">
-//             <div className="text-3xl md:text-4xl font-light text-[#333333] mb-2 font-['Inter'] tracking-[-0.02em]">6+</div>
-//             <div className="w-8 h-[1px] bg-[#FF8A5C]/30 mx-auto mb-2 group-hover:w-12 transition-all duration-300"></div>
-//             <div className="text-sm text-[#666666] font-light tracking-wide font-['Inter']">Services</div>
-//           </div>
-//           <div className="text-center group">
-//             <div className="text-3xl md:text-4xl font-light text-[#333333] mb-2 font-['Inter'] tracking-[-0.02em]">100%</div>
-//             <div className="w-8 h-[1px] bg-[#FF8A5C]/30 mx-auto mb-2 group-hover:w-12 transition-all duration-300"></div>
-//             <div className="text-sm text-[#666666] font-light tracking-wide font-['Inter']">Satisfaction</div>
-//           </div>
-//           <div className="text-center group">
-//             <div className="text-3xl md:text-4xl font-light text-[#333333] mb-2 font-['Inter'] tracking-[-0.02em]">24/7</div>
-//             <div className="w-8 h-[1px] bg-[#FF8A5C]/30 mx-auto mb-2 group-hover:w-12 transition-all duration-300"></div>
-//             <div className="text-sm text-[#666666] font-light tracking-wide font-['Inter']">Support</div>
-//           </div>
-//         </div>
-        
-//         {/* BOTTOM DECORATIVE LINE - MODERN */}
-//         <div className="flex items-center justify-center gap-4 mt-20">
-//           <div className="w-16 h-[1px] bg-[#FF8A5C]/20"></div>
-//           <span className="text-[#FF8A5C] text-xs font-light tracking-[0.3em]">◈</span>
-//           <div className="w-16 h-[1px] bg-[#FF8A5C]/20"></div>
-//         </div>
-//       </div>
-
-//       <style jsx>{`
-//         @keyframes fadeIn {
-//           from {
-//             opacity: 0;
-//             transform: translateY(20px);
-//           }
-//           to {
-//             opacity: 1;
-//             transform: translateY(0);
-//           }
-//         }
-        
-//         .animate-fadeIn {
-//           animation: fadeIn 0.6s ease-out forwards;
-//           opacity: 0;
-//         }
-//       `}</style>
-//     </section>
-//   )
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
+import { Code2, Layers, Smartphone, Zap, Globe, PenTool } from 'lucide-react'
 
-import { Code2, Layout, Smartphone, Globe, Figma, Server, Layers, Zap } from 'lucide-react'
+const services = [
+  { icon: Code2,      no: '01', title: 'React & Next.js Development', body: 'Component-driven UIs with the App Router, SSR/ISR, TypeScript, and scalable state management. Production-grade code, not tutorials.', tags: ['React 18', 'Next.js 14', 'TypeScript'] },
+  { icon: Layers,     no: '02', title: 'Full-Stack MERN Applications', body: 'End-to-end: REST API design, MongoDB schemas, Express middleware, auth — then the React front that ties it together.', tags: ['Node.js', 'Express', 'MongoDB'] },
+  { icon: Smartphone, no: '03', title: 'Responsive & Mobile-First UI', body: 'Fluid layouts that hold up on every screen. CSS Grid, Flexbox, and Tailwind — no janky breakpoints, no overflow bugs.', tags: ['Tailwind CSS', 'CSS Grid', 'Mobile-first'] },
+  { icon: Zap,        no: '04', title: 'Performance Optimisation', body: 'Real Lighthouse scores. Lazy loading, image optimisation, code splitting, and Core Web Vitals tuning that recruiters and clients notice.', tags: ['Core Web Vitals', 'LCP/CLS/FID', 'Vercel'] },
+  { icon: Globe,      no: '05', title: 'Third-Party API Integration', body: 'OpenAI, WhatsApp Business, Google Maps, Stripe — stitching external services into seamless user flows without the mess.', tags: ['OpenAI API', 'REST', 'Webhooks'] },
+  { icon: PenTool,    no: '06', title: 'Figma → Pixel-Perfect Code', body: 'Given a design file, I reproduce it exactly — not approximately. Every spacing value, every hover state, every shadow.', tags: ['Figma', 'Pixel-perfect', 'Animations'] },
+]
 
 export default function Services() {
-  const capabilities = [
-    {
-      icon: <Code2 size={28} />,
-      title: "Frontend Development",
-      description: "Modern, component-based architecture with React, Next.js, and TypeScript for scalable web applications.",
-      tags: ["React", "Next.js", "TypeScript"]
-    },
-    {
-      icon: <Server size={28} />,
-      title: "Full Stack Projects",
-      description: "End-to-end applications with authentication, APIs, database integration, and admin dashboards.",
-      tags: ["Node.js", "MongoDB", "REST APIs"]
-    },
-    {
-      icon: <Layout size={28} />,
-      title: "Responsive Interfaces",
-      description: "Pixel-perfect, fluid layouts that work seamlessly across all devices and screen sizes.",
-      tags: ["Mobile First", "Fluid Grids", "Adaptive"]
-    },
-    {
-      icon: <Figma size={28} />,
-      title: "Design to Code",
-      description: "Converting Figma designs into fully functional, interactive, production-ready code.",
-      tags: ["Pixel Perfect", "Figma to React", "Interactive"]
-    },
-    {
-      icon: <Layers size={28} />,
-      title: "Modern UI Systems",
-      description: "Building consistent, reusable component libraries with Tailwind CSS and design tokens.",
-      tags: ["Component Library", "Tailwind", "Design Tokens"]
-    },
-    {
-      icon: <Zap size={28} />,
-      title: "Interactive Experiences",
-      description: "Smooth animations, micro-interactions, and engaging user experiences with Framer Motion.",
-      tags: ["Animations", "Micro-interactions", "Performance"]
-    }
-  ]
-
   return (
-    <section id="services" className="relative w-full min-h-screen bg-[#E5E5E5] overflow-x-hidden">
-      {/* CLEAN BG */}
-      <div className="absolute inset-0 bg-[#E5E5E5]"></div>
-      
-      {/* SUBTLE BACKGROUND - ONLY ONE */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#FF8A5C]/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#FF8A5C]/5 rounded-full blur-3xl"></div>
-      </div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-        
-        {/* SECTION HEADER - CLEAN & MINIMAL */}
-        <div className="text-center mb-16 md:mb-20">
-          <span className="inline-block text-[#FF8A5C] text-xs sm:text-sm font-medium tracking-[0.3em] uppercase mb-4">
-            CAPABILITIES
-          </span>
-          
-          {/* SINGLE DECORATIVE ELEMENT - JUST ONE LINE */}
-          <div className="w-12 h-[1px] bg-[#FF8A5C]/40 mx-auto mb-6"></div>
-          
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal text-[#333333] mb-4 tracking-[-0.02em]">
-            What I Build
-          </h2>
-          
-          <p className="text-[#666666] text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
-            Real-world expertise from production-level projects
+    <section id="services" style={{ background: 'var(--bg-card)', position: 'relative' }}>
+      <div style={{ height: 1, background: 'var(--line)' }} />
+      <div className="container section-pad">
+
+        {/* Header */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', gap: 24, marginBottom: 64 }}>
+          <div>
+            <div className="eyebrow" style={{ marginBottom: 16 }}>What I Offer</div>
+            <h2 className="display-lg" style={{ color: 'var(--white)' }}>
+              Services &<br /><span className="hl">Capabilities</span>
+            </h2>
+          </div>
+          <p style={{ maxWidth: 360, fontSize: 15, lineHeight: 1.7, color: 'var(--grey)' }}>
+            I work across the full frontend stack — from API wiring to animation polish. 
+            Here's where I spend my time.
           </p>
         </div>
 
-        {/* CAPABILITIES GRID - CLEAN CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {capabilities.map((capability, index) => (
-            <div
-              key={index}
-              className="group bg-white rounded-2xl p-6 md:p-7 border border-[#E0E0E0] hover:border-[#FF8A5C]/40 transition-all duration-300 hover:-translate-y-1"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* ICON - CLEAN */}
-              <div className="mb-5">
-                <div className="w-12 h-12 rounded-xl bg-[#FF8A5C]/10 flex items-center justify-center text-[#FF8A5C] group-hover:bg-[#FF8A5C] group-hover:text-white transition-all duration-300">
-                  {capability.icon}
+        {/* Grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 360px), 1fr))',
+          gap: 1,
+          border: '1px solid var(--line)',
+          borderRadius: 20,
+          overflow: 'hidden',
+        }}>
+          {services.map((s, i) => {
+            const Icon = s.icon
+            return (
+              <div key={i} style={{
+                background: 'var(--bg)',
+                padding: 'clamp(24px,3vw,36px)',
+                borderRight: '1px solid var(--line)',
+                borderBottom: '1px solid var(--line)',
+                transition: 'background 0.25s',
+                cursor: 'default',
+              }}
+              onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-raised)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'var(--bg)'}
+              >
+                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 20 }}>
+                  <div style={{
+                    width: 44, height: 44, borderRadius: 10,
+                    background: 'var(--accent-dim)',
+                    border: '1px solid rgba(232,255,71,0.18)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: 'var(--accent)',
+                  }}>
+                    <Icon size={20} strokeWidth={1.5} />
+                  </div>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--grey)', letterSpacing: '0.1em' }}>{s.no}</span>
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 17, fontWeight: 700, color: 'var(--white)', marginBottom: 10, letterSpacing: '-0.015em', lineHeight: 1.3 }}>{s.title}</h3>
+                <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--grey)', marginBottom: 20 }}>{s.body}</p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                  {s.tags.map(t => (
+                    <span key={t} className="tag" style={{ fontSize: 10 }}>{t}</span>
+                  ))}
                 </div>
               </div>
-
-              {/* TITLE */}
-              <h3 className="text-xl md:text-2xl font-medium text-[#333333] mb-3 group-hover:text-[#FF8A5C] transition-colors duration-300">
-                {capability.title}
-              </h3>
-              
-              {/* DESCRIPTION */}
-              <p className="text-[#666666] text-sm md:text-base font-normal leading-relaxed mb-5">
-                {capability.description}
-              </p>
-
-              {/* TAGS - MINIMAL */}
-              <div className="flex flex-wrap gap-2">
-                {capability.tags.map((tag, tagIndex) => (
-                  <span
-                    key={tagIndex}
-                    className="px-2.5 py-1 bg-[#F5F5F5] text-[#666666] text-xs font-normal rounded-md"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* STATS - REALISTIC & CREDIBLE */}
-        <div className="mt-20 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-3xl mx-auto">
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-medium text-[#FF8A5C] mb-1">2+</div>
-            <div className="text-xs md:text-sm text-[#666666] font-normal">Years Experience</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-medium text-[#FF8A5C] mb-1">5+</div>
-            <div className="text-xs md:text-sm text-[#666666] font-normal">Projects Delivered</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-medium text-[#FF8A5C] mb-1">6</div>
-            <div className="text-xs md:text-sm text-[#666666] font-normal">Tech Stack</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-medium text-[#FF8A5C] mb-1">100%</div>
-            <div className="text-xs md:text-sm text-[#666666] font-normal">Client Focus</div>
-          </div>
+            )
+          })}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(15px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-fadeIn {
-          animation: fadeIn 0.5s ease-out forwards;
-          opacity: 0;
-        }
-      `}</style>
     </section>
   )
 }
