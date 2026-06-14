@@ -12,7 +12,7 @@ const projects = [
     body: 'Full-stack SaaS that uses GPT-4o to generate quizzes on demand. JWT auth, real-time scoring engine, educator analytics dashboard. Built the backend, designed the data model, and shipped the UI — solo.',
     tags: ['Next.js 14', 'TypeScript', 'MongoDB', 'OpenAI API', 'JWT', 'Vercel'],
     bullets: ['AI question generation with prompt engineering', 'JWT auth system from scratch', 'Real-time score tracking & leaderboard', 'Lighthouse 95+ after performance pass'],
-    live: 'https://quizplatform-7dh5.vercel.app',
+    live: 'https://quizplatform-7dh5-59ygtev31-urooj-rasheeds-projects.vercel.app/',
     github: 'https://github.com/uroojmlyk',
     featured: true,
     img: '/quizforge.png',
