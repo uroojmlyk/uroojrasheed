@@ -5,12 +5,12 @@
 import { Code2, Layers, Smartphone, Zap, Globe, PenTool } from 'lucide-react'
 
 const services = [
-  { icon: Code2,      no: '01', title: 'React & Next.js Development', body: 'Component-driven UIs with the App Router, SSR/ISR, TypeScript, and scalable state management. Production-grade code, not tutorials.', tags: ['React 18', 'Next.js 14', 'TypeScript'] },
-  { icon: Layers,     no: '02', title: 'Full-Stack MERN Applications', body: 'End-to-end: REST API design, MongoDB schemas, Express middleware, auth — then the React front that ties it together.', tags: ['Node.js', 'Express', 'MongoDB'] },
-  { icon: Smartphone, no: '03', title: 'Responsive & Mobile-First UI', body: 'Fluid layouts that hold up on every screen. CSS Grid, Flexbox, and Tailwind — no janky breakpoints, no overflow bugs.', tags: ['Tailwind CSS', 'CSS Grid', 'Mobile-first'] },
+  { icon: Code2,      no: '01', title: 'React & Next.js Development', body: 'Component driven UIs with the App Router, SSR/ISR, TypeScript, and scalable state management. Production-grade code, not tutorials.', tags: ['React 18', 'Next.js 14', 'TypeScript'] },
+  { icon: Layers,     no: '02', title: 'Full-Stack MERN Applications', body: 'End-to-end: REST API design, MongoDB schemas, Express middleware, auth then the React front that ties it together.', tags: ['Node.js', 'Express', 'MongoDB'] },
+  { icon: Smartphone, no: '03', title: 'Responsive & Mobile-First UI', body: 'Fluid layouts that hold up on every screen. CSS Grid, Flexbox, and Tailwind no janky breakpoints, no overflow bugs.', tags: ['Tailwind CSS', 'CSS Grid', 'Mobile-first'] },
   { icon: Zap,        no: '04', title: 'Performance Optimisation', body: 'Real Lighthouse scores. Lazy loading, image optimisation, code splitting, and Core Web Vitals tuning that recruiters and clients notice.', tags: ['Core Web Vitals', 'LCP/CLS/FID', 'Vercel'] },
-  { icon: Globe,      no: '05', title: 'Third-Party API Integration', body: 'OpenAI, WhatsApp Business, Google Maps, Stripe — stitching external services into seamless user flows without the mess.', tags: ['OpenAI API', 'REST', 'Webhooks'] },
-  { icon: PenTool,    no: '06', title: 'Figma → Pixel-Perfect Code', body: 'Given a design file, I reproduce it exactly — not approximately. Every spacing value, every hover state, every shadow.', tags: ['Figma', 'Pixel-perfect', 'Animations'] },
+  { icon: Globe,      no: '05', title: 'Third-Party API Integration', body: 'OpenAI, WhatsApp Business, Google Maps, Stripe stitching external services into seamless user flows without the mess.', tags: ['OpenAI API', 'REST', 'Webhooks'] },
+  { icon: PenTool,    no: '06', title: 'Figma → Pixel-Perfect Code', body: 'Given a design file, I reproduce it exactly not approximately. Every spacing value, every hover state, every shadow.', tags: ['Figma', 'Pixel-perfect', 'Animations'] },
 ]
 
 export default function Services() {
@@ -28,7 +28,7 @@ export default function Services() {
             </h2>
           </div>
           <p style={{ maxWidth: 360, fontSize: 15, lineHeight: 1.7, color: 'var(--grey)' }}>
-            I work across the full frontend stack — from API wiring to animation polish. 
+            I work across the full frontend stack from API wiring to animation polish. 
             Here's where I spend my time.
           </p>
         </div>

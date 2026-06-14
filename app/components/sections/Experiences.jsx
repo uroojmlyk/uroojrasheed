@@ -2,222 +2,6 @@
 
 
 
-// "use client";
-
-// import { Briefcase, GraduationCap, ExternalLink } from 'lucide-react'
-// import Link from 'next/link'
-
-// const experiences = [
-//   {
-//     type: 'work',
-//     title: 'Frontend Developer (Freelance)',
-//     company: 'Independent',
-//     date: '2024 — Present',
-//     summary: 'Designed and shipped 2 production applications end-to-end — from architecture decisions to deployment on Vercel.',
-//     tech: ['Next.js 14', 'React', 'TypeScript', 'MongoDB', 'Tailwind CSS', 'OpenAI API'],
-//     highlights: [
-//       'Built reusable atomic component system — reduced UI build time ~35%',
-//       'Improved Lighthouse score from ~80 → 95+ via image optimization & code splitting',
-//       'Integrated OpenAI API for dynamic AI-generated quiz content',
-//       'Implemented WhatsApp ordering flow — no traditional checkout required',
-//       'Mobile-first development for 70%+ mobile user base (Pakistan market)',
-//     ],
-//     links: [
-//       { label: 'QuizForge', url: 'https://quizplatform-7dh5.vercel.app' },
-//       { label: 'MILA Miami', url: 'https://mila-miami.com/' },
-//     ],
-//   },
-//   {
-//     type: 'education',
-//     title: 'Self-directed Frontend Engineering',
-//     company: 'Project-based Learning',
-//     date: '2024 — 2025',
-//     summary: 'Mastered modern React patterns, Next.js App Router, and full-stack MERN development by building real production applications.',
-//     tech: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Node.js', 'Git'],
-//     highlights: [
-//       'Deep-dived Next.js App Router, SSR, ISR patterns in production',
-//       'REST API design with error handling, loading states, optimistic updates',
-//       'Built reusable component library used across multiple projects',
-//       'Practiced Git workflow, PR reviews, and deployment pipelines',
-//     ],
-//     links: [],
-//   },
-// ]
-
-// export default function Experiences() {
-//   return (
-//     <section id="experiences" style={{
-//       background: 'var(--bg-2)',
-//       padding: 'clamp(80px, 10vw, 128px) 0',
-//       position: 'relative',
-//     }}>
-//       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'var(--border)' }} />
-
-//       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-//         <div style={{ marginBottom: '64px' }}>
-//           <div className="section-tag" style={{ marginBottom: '16px' }}>Background</div>
-//           <h2 style={{
-//             fontFamily: 'DM Sans, sans-serif',
-//             fontSize: 'clamp(32px, 5vw, 52px)',
-//             fontWeight: 800,
-//             letterSpacing: '-0.03em',
-//             color: 'var(--text-primary)',
-//             lineHeight: 1.1,
-//           }}>
-//             Experience &<br /><span className="gradient-text">Education</span>
-//           </h2>
-//         </div>
-
-//         {/* Timeline */}
-//         <div style={{ position: 'relative' }}>
-//           {/* Vertical line */}
-//           <div style={{
-//             position: 'absolute',
-//             left: '20px',
-//             top: '8px',
-//             bottom: 0,
-//             width: '1px',
-//             background: 'var(--border)',
-//           }} className="timeline-line" />
-
-//           <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
-//             {experiences.map((exp, i) => (
-//               <div key={i} style={{ display: 'flex', gap: '32px' }} className="timeline-item">
-//                 {/* Dot */}
-//                 <div style={{
-//                   flexShrink: 0,
-//                   width: '40px',
-//                   height: '40px',
-//                   borderRadius: '50%',
-//                   background: exp.type === 'work' ? 'var(--accent-muted)' : 'var(--surface)',
-//                   border: `1px solid ${exp.type === 'work' ? 'rgba(255,107,53,0.3)' : 'var(--border-2)'}`,
-//                   display: 'flex',
-//                   alignItems: 'center',
-//                   justifyContent: 'center',
-//                   color: exp.type === 'work' ? 'var(--accent)' : 'var(--text-secondary)',
-//                   zIndex: 1,
-//                   position: 'relative',
-//                 }}>
-//                   {exp.type === 'work' ? <Briefcase size={18} /> : <GraduationCap size={18} />}
-//                 </div>
-
-//                 {/* Content */}
-//                 <div style={{
-//                   flex: 1,
-//                   background: 'var(--surface)',
-//                   border: '1px solid var(--border)',
-//                   borderRadius: '14px',
-//                   padding: 'clamp(20px, 3vw, 32px)',
-//                 }}>
-//                   <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '12px' }}>
-//                     <div>
-//                       <h3 style={{
-//                         fontFamily: 'DM Sans, sans-serif',
-//                         fontSize: '19px',
-//                         fontWeight: 700,
-//                         color: 'var(--text-primary)',
-//                         letterSpacing: '-0.01em',
-//                         marginBottom: '4px',
-//                       }}>
-//                         {exp.title}
-//                       </h3>
-//                       <span style={{ fontSize: '13px', color: 'var(--text-muted)', fontFamily: 'DM Mono, monospace' }}>
-//                         {exp.company}
-//                       </span>
-//                     </div>
-//                     <span style={{
-//                       padding: '4px 12px',
-//                       background: 'var(--bg-3)',
-//                       border: '1px solid var(--border)',
-//                       borderRadius: '100px',
-//                       fontSize: '12px',
-//                       fontFamily: 'DM Mono, monospace',
-//                       color: 'var(--text-muted)',
-//                       whiteSpace: 'nowrap',
-//                     }}>
-//                       {exp.date}
-//                     </span>
-//                   </div>
-
-//                   <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '20px' }}>
-//                     {exp.summary}
-//                   </p>
-
-//                   <ul style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
-//                     {exp.highlights.map((h, idx) => (
-//                       <li key={idx} style={{
-//                         display: 'flex', alignItems: 'flex-start', gap: '10px',
-//                         fontSize: '13px',
-//                         color: 'var(--text-secondary)',
-//                         lineHeight: 1.5,
-//                       }}>
-//                         <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--accent)', marginTop: '6px', flexShrink: 0 }} />
-//                         {h}
-//                       </li>
-//                     ))}
-//                   </ul>
-
-//                   {/* Tech stack */}
-//                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: exp.links.length > 0 ? '20px' : 0 }}>
-//                     {exp.tech.map((t) => (
-//                       <span key={t} style={{
-//                         padding: '3px 10px',
-//                         background: 'var(--bg-3)',
-//                         border: '1px solid var(--border)',
-//                         borderRadius: '4px',
-//                         fontSize: '11px',
-//                         fontFamily: 'DM Mono, monospace',
-//                         color: 'var(--text-muted)',
-//                       }}>{t}</span>
-//                     ))}
-//                   </div>
-
-//                   {/* Links */}
-//                   {exp.links.length > 0 && (
-//                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
-//                       {exp.links.map((link) => (
-//                         <Link
-//                           key={link.label}
-//                           href={link.url}
-//                           target="_blank"
-//                           rel="noopener noreferrer"
-//                           style={{
-//                             display: 'inline-flex', alignItems: 'center', gap: '6px',
-//                             fontSize: '13px',
-//                             fontWeight: 500,
-//                             color: 'var(--accent)',
-//                             textDecoration: 'none',
-//                           }}
-//                           onMouseEnter={e => e.currentTarget.style.textDecoration = 'underline'}
-//                           onMouseLeave={e => e.currentTarget.style.textDecoration = 'none'}
-//                         >
-//                           {link.label} <ExternalLink size={12} />
-//                         </Link>
-//                       ))}
-//                     </div>
-//                   )}
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-
-//       <style jsx>{`
-//         @media (max-width: 600px) {
-//           .timeline-line { display: none; }
-//           .timeline-item { gap: 16px !important; }
-//         }
-//       `}</style>
-//     </section>
-//   )
-// }
-
-
-
-
-
-
 
 
 
@@ -231,17 +15,17 @@ const items = [
     title: 'Frontend Developer',
     org: 'Freelance / Independent',
     period: '2024 — Present',
-    desc: 'Shipped 2 full-stack production applications solo — from architecture to deployment. Handled client requirements, iterative design, performance tuning, and live delivery.',
+    desc: 'Shipped 2 full-stack production applications solo from architecture to deployment. Handled client requirements, iterative design, performance tuning, and live delivery.',
     points: [
-      'Built reusable component system — cut UI build time by ~35%',
+      'Built reusable component system cut UI build time by ~35%',
       'Lifted Lighthouse score from ~78 to 95+ across both projects',
-      'Integrated OpenAI GPT-4o for AI-driven quiz generation with real-time streaming',
-      'Designed WhatsApp-native ordering flow, no traditional checkout needed',
-      'Delivered mobile-first UX for Pakistan market (70%+ mobile users)',
+      'Integrated OpenAI GPT-4o for AI-driven quiz generation with real time streaming',
+      'Designed WhatsApp native ordering flow, no traditional checkout needed',
+      'Delivered mobile first UX for Pakistan market (70%+ mobile users)',
     ],
     tech: ['Next.js 14', 'React 18', 'TypeScript', 'MongoDB', 'Tailwind', 'Node.js', 'OpenAI API', 'Vercel'],
     links: [
-      { label: 'QuizForge ↗', url: 'https://quizplatform-7dh5.vercel.app' },
+      { label: 'QuizForge ↗', url: 'https://quizforge-web.vercel.app/' },
       { label: 'MILA Miami ↗', url: 'https://mila-miami.com/' },
     ],
   },
@@ -250,7 +34,7 @@ const items = [
     title: 'Self-Directed Engineering',
     org: 'Project-Based Learning',
     period: '2023 — 2024',
-    desc: 'Levelled up through building, not watching — shipped real projects instead of following tutorials. Focus on React patterns, Next.js internals, and full-stack architecture.',
+    desc: 'Levelled up through building, not watching shipped real projects instead of following tutorials. Focus on React patterns, Next.js internals, and full-stack architecture.',
     points: [
       'Mastered Next.js App Router, Server Components, and data fetching strategies',
       'Built custom REST APIs with proper error handling and auth middleware',
